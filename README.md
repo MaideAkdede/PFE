@@ -5,7 +5,7 @@
 
 ## Intro
 
-Ça va faire maintenant presque deux ans que mon père à décider de se lancer dans la vente de boissons (et de snacks). Il vend principalement à des restaurateurs (fast-food compris) et également à des particuliers.
+Il y a presque deux ans mon père a décidé de se lancer dans la vente de boissons (et de snacks). Il vend principalement à des restaurateurs (fast-food compris) et également à des particuliers.
 
 La vente de ses produits se fait par téléphone (appel, sms, WhatsApp, Facebook). Il fait donc lui même la livraison de ses commandes ou alors il se met d'accord avec l'acheteur qui vient chercher sa commande à un point X.
 
