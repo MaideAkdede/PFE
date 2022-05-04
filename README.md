@@ -1,47 +1,49 @@
 # PFE
 
-***
-
-
 ## Présentation
 
-Il y a presque deux ans mon père a décidé de se lancer dans la vente de boissons (et de snacks). Il vend principalement à des restaurateurs (fast-food compris) et également à des particuliers.
+Pour mon PFE, j'ai décidé de faire un site web pour mon père, Tayfun AKDEDE (indépendant) qui s'est lancé dans la vente en lot de boissons et de snacks.
+
+Nom du market : Top Soda
 
 La vente de ses produits se fait par téléphone (appel, sms, WhatsApp, Facebook). Il fait donc lui même la livraison de ses commandes (lieu:  Ans, Awans, Bassenge, Beyne-Heusay, Blegny, Chaudfontaine, Dalhem, Flémalle, Fléron, Grâce-Hollogne, Herstal, Juprelle, Liège, Oupeye, Saint-Nicolas, Seraing, Soumagne, Trooz, Visé) ou alors il se met d'accord avec l'acheteur qui vient chercher sa commande à un point X.
 
-Étant donné, qu'il est tout seul et qu'il ne peut pas être à un point X et Y au même moment il préfère toujours s'arranger avec l'acheteur.
-
 Les paiements sont souvent effectués en espèces, via Bancontact ou encore Paypal.
 
-Pour la gestion de ses ventes, il utilise un `tableau excel` :clap:
-Et pour la liste des produits qu'il vend, c'est un fichier `PDF` qu'il envoie à ses clients.
-Cette liste est souvent mise à jour:
-- ajout et suppression de produits
-- changement de prix
+Pour la gestion de ses ventes, il utilise un `tableau excel`.
+Et pour la liste des produits qu'il vend, c'est un `tableau word` converti en `PDF` qu'il envoie à ses clients (sans image) et qui est souvent mise-à-jour.
 
-Mon père avait déjà un site fait avec Wordpress (une sorte de catalogue en ligne fait par autrui) qu'il n'a jamais aimé que ce soit l'interface du site, les images se resizait très mal, ou encore Wordpress.
+A chaque changement, le PDF doit être réenvoyer. 
 
-Ayant eu une très brève discussion avec lui par rapport au projet, il dit accepter tout ce qui lui sera offert tant que ce n'est pas du Wordpress.
+Avoir un site web éviterait toutes ces étapes.
 
+### Avantages 
+- gain de temps pour le venteur (éviter de changer tout sur word et envoyer en pdf à chaque changement des prix)
+- mettre à jour ses prix rapidements 
+- gain de temps pour le client qui n'aura pas à demander le PDF à chaque fois
+- user-friendly et attractif pour le client car il aura un visuel de ce qu'il veut et non pas uniquement un tableau pdf
 
-## Cahier des charges (très bref et temporaire)
+## Cahier des charges
 
-- site accessible sur mobile et sur ordi
-- pas de Wordpress
-- facile à utiliser
-- interface claire et compréhesible
-- pas un e-shop
-- mettre coordonnées de contact
-- clients :
-  - laisser la possibilité aux clients (visiteurs du site) de constituer une liste (panier?)
-- admin :
-  - ajouter produits, supprimer article
-  - modifier produits
-  - ajouter catégories (snack, boissons énergisantes, soda, etc)
-  - ajouter / modifier photos
-  - archiver ses ventes
-  - si le stock est limité mettre en avant
-  - si bientôt en stock mettre en avant
+- Site web accessible sur Mobile et sur Ordinateur 
+- Pas de Wordpress
+- Facile d‘utilisation 
+- Interface claire et compréhesible
+- Pas e-shop 
+- Coordonnées de contact mise en avant (facebook, tel, etc)
+- Search bar
+- **Clients** :
+  - Constitué une wishlist qui sera envoyé au vendeur et/ou enregistré en PDF
+- **Admin** :
+  - Ajouter produits (Nom, description, photo, prix, catégories)
+  - Supprimer produits
+  - Produit "en rupture de stock" / "bientôt disponible"
+  - Porduits "Stock limité" avec un timing countdown
+  - Modifier produits (prix, images, descriptions)
+  - Ajouter catégories (snack, boissons énergisantes, boissons pétillantes, eau, café...)
+  - Avoir la liste des boissons sous forme de tableau
+  - Produit éditable disrectement sur la page d'un single-produit si authentifié
+
 
 ### sites :
 - https://www.monsterenergy.com/be/fr/products/monster-energy
