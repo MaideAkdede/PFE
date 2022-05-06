@@ -81,7 +81,22 @@ A chaque changement (changement de prix, nouveauté, etc) le PDF est réenvoyé.
 - **Politiques des cookies** 
 - **Mentions légales**
 - **Politiques de confidentialités**
-
+- **Admin**
+  - Route privée - pas de lien direct seul l'admin aura le lien type wordpress /wp-admin
+  - Se connecter / Se déconnecter
+  - Ajouter bouton pour accéder coté admin dans menu si connecté
+  - Modifier Slider accueil 
+  - Ajouter/Édit/Delete boissons & snack 
+  - Ajouter catégorie 
+  - Ajouter sous-catégorie 
+  - Ajouter Marques 
+  - Voir liste des boissons snack directement en dur 
+  - Liste des ventes 
+  - Encoder vente (Client info, date, produit)
+- **Guest**
+  - ajouter à la Wishlist 
+  - Envoyer la wishlist au vendeur (db et mail)
+  - Enregistrer en PDF
 
 ### Jeter un oeil à ces sites :
 - https://www.monsterenergy.com/be/fr/products/monster-energy
