@@ -120,8 +120,26 @@ A chaque changement (changement de prix, nouveauté, etc) le PDF est réenvoyé.
 <img src="./moodboard_images/contact.png" alt="drawing" width="200"/>
 <img src="./moodboard_images/howto.png" alt="drawing" width="200"/>
 
+### Searchable MultiSlect Dropdown 
+- https://codepen.io/LoneFox/pen/OJVjPeg
+- https://codepen.io/vdhug/pen/xxbPoJe
+- https://www.itsolutionstuff.com/post/laravel-multi-select-dropdown-with-checkbox-exampleexample.html
+
+### Couleur 
+
+- https://colourcontrast.cc/087985/ffffff
+
 ### Police
 TODO: à déterminer
+
+### Artciles liés aux soucis rencontré:
+
+- https://www.bounteous.com/insights/2019/03/22/orange-you-accessible-mini-case-study-color-ratio/
+- https://graphicdesign.stackexchange.com/questions/81360/why-is-the-w3c-contrast-score-recommending-hard-to-read-text
+- https://uxmovement.com/buttons/the-myths-of-color-contrast-accessibility/
+- 
+***
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

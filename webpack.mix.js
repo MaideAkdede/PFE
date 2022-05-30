@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+require('laravel-mix-pluton');
 
 /*
  |--------------------------------------------------------------------------
@@ -10,8 +11,13 @@ const mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.postCss("resources/css/app.css", "public/css", [
+    require("tailwindcss"),
+])
+    .pluton("resources/js/parts")
+    .js("resources/js/app.js", "public/js")
+    .browserSync({
+        proxy: "localhost",
+        notify: false,
+    });
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
