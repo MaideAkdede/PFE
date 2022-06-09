@@ -7,7 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title> {{ $title }} - PFE</title>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    @livewireStyles
 </head>
 <body class="flex flex-col min-h-screen">
 <header class="px-5 py-7">
@@ -40,6 +39,5 @@
 </main>
 <footer class="">Footer</footer>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-@livewireScripts
 </body>
 </html>
