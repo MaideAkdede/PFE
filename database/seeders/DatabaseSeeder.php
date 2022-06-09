@@ -26,6 +26,18 @@ class DatabaseSeeder extends Seeder
             'slug' => 'boisson',
             'created_at' => now(),
         ]);
+        \App\Models\Subcategory::factory()->create([
+            'name' => 'Energy Drink',
+            'slug' => 'energy-drink',
+            'category_id'=>'1',
+            'created_at' => now(),
+        ]);
+        \App\Models\Subcategory::factory()->create([
+            'name' => 'Chips',
+            'slug' => 'chips',
+            'category_id'=>'2',
+            'created_at' => now(),
+        ]);
         \App\Models\Category::factory()->create([
             'name' => 'Snack',
             'slug' => 'snack',

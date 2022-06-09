@@ -10,7 +10,7 @@ class LoginLogoutController extends Controller
 {
     public function create()
     {
-        $title = "Page de connexion";
+        $title = "Connexion";
         return view('sessions.login.create', compact('title'));
     }
 

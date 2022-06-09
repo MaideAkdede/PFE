@@ -15,5 +15,6 @@
                 </article>
             @endforeach
         </div>
+        {{ $products->links() }}
     </x-slot>
 </x-layout>

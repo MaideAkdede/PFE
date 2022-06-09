@@ -3,7 +3,7 @@ export default class Counter {
         return 'body';
     }
 
-    constructor() {
-        console.log('Toggle menu Not Finished')
+    constructor(element) {
+        console.log('hello')
     }
 }

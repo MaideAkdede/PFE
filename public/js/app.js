@@ -160,10 +160,10 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 var Counter = /*#__PURE__*/function () {
-  function Counter() {
+  function Counter(element) {
     _classCallCheck(this, Counter);
 
-    console.log('Toggle menu Not Finished');
+    console.log('hello');
   }
 
   _createClass(Counter, null, [{

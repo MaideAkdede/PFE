@@ -10,7 +10,7 @@
     <title> {{ $title }} - PFE</title>
 </head>
 <body class="flex flex-col min-h-screen">
-<header class="bg-primary text-white p-5">
+<header class="px-5 py-7">
     <nav class="flex justify-between">
         <div>
             <a href="/boissons" class="text-xs uppercase font-bold underline">Boissons</a>
@@ -38,7 +38,7 @@
 <main class="grow">
     {{ $content }}
 </main>
-<footer class="bg-primary text-white p-5">Footer</footer>
+<footer class="">Footer</footer>
 <script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 @livewireScripts
 </body>

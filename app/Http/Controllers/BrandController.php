@@ -10,7 +10,7 @@ class BrandController extends Controller
 {
     public function index()
     {
-        $brands = Brand::paginate(5);
+        $brands = Brand::paginate(5)->sortBy('name');
         return view('brands.index', [
             'brands' => $brands,
             'title' => 'Les marques que nous vendons',

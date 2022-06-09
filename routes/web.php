@@ -37,7 +37,12 @@ Route::get('/snacks/{product:slug}', [ProductController::class, 'showSnack'])->n
 Route::get('/marques', [BrandController::class, 'index']);
 Route::get('/marques/{brand:slug}', [BrandController::class, 'show']);
 //
-// Register
+// Show all the subcategories && single subcategory w/ it's related products
+//
+Route::get('/sous-categories', [\App\Http\Controllers\SubcategoryController::class, 'index']);
+Route::get('/sous-categories/{subcategory:slug}', [\App\Http\Controllers\SubcategoryController::class, 'show']);
+//
+//
 //
 Route::middleware('guest')->group(function () {
     Route::get('/inscription', [RegisterController::class, 'create']);
@@ -52,6 +57,9 @@ Route::middleware('auth')->group(function () {
 
 // ADMIN ONLY
 Route::middleware('admin')->group(function () {
+    // Add & edit Products
     Route::get('/admin/produits/ajouter', [ProductController::class, 'create']);
     Route::post('/admin/produits/ajouter', [ProductController::class, 'store']);
+    // Add & edit subcategory
+    // Add & edit brands
 });

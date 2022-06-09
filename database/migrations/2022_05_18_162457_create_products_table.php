@@ -17,13 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->string('slug')->unique();
-            $table->string('img')->nullable();
+            $table->string('image')->nullable();
             $table->string('price')->nullable();
             $table->double('number')->nullable();
             $table->double('quantity')->nullable();
             $table->string('unity')->nullable();
             $table->foreignId('category_id')->nullable();
-            $table->foreignId('subcategory_id')->nullable();
             $table->foreignId('brand_id')->nullable();
             $table->boolean('out_of_stock')->default(false);
             $table->timestamps();

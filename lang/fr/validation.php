@@ -143,6 +143,14 @@ return [
     |
     */
     'attributes' => [
-        'email' => 'adresse e-mail'
+        'email' => 'adresse e-mail',
+        'unity'=>'unité de mesure',
+        'number'=>'nombre',
+        'name'=>'nom',
+        'price'=>'prix',
+        'quantity'=>'quantité',
+        'subcategories'=>'sous-catégories',
+        'add_new_brand'=>'nouvelle marque',
+        'add_new_subcategories'=>'nouvelles sous-catégories',
     ],
 ];

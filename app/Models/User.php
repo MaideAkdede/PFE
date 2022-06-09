@@ -17,7 +17,7 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $guarded   = [];
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -37,15 +37,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
     // Mutators
     public function setPasswordAttribute($password) //HASH PASSWORD
     {
         $this->attributes['password'] = bcrypt($password);
     }
+
     public function setEmailAttribute($email) // Make the email lower case when saving into database
     {
         $this->attributes['email'] = strtolower($email);
     }
+
     public function setNameAttribute($fname) // make first letter capitalasize when saving to the database
     {
         $this->attributes['first_name'] = ucwords($fname);
