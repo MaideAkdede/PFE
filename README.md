@@ -2,7 +2,11 @@
 
 ## Présentation
 
-Link : http://159.223.232.46/ 
+Projet en ligne : http://159.223.232.46/ 
+Moodboard InVision : https://projects.invisionapp.com/boards/7943QT2QWN8/
+Wireframe : https://xd.adobe.com/view/641c2327-49e4-4799-827d-9503459d66b8-314f/
+Design 1 (je teste plusieurs visuels) : https://xd.adobe.com/view/9d76516f-1c3e-4461-87e3-a38ef099854e-c825/ 
+Design 2 (Je développe le design choisi) : https://xd.adobe.com/view/79f71ce1-1ae7-4905-a22f-e8b044d84d2a-2ca4/
 
 
 Pour mon PFE, j'ai décidé de faire un site web pour mon père, Tayfun AKDEDE (indépendant) qui s'est lancé dans la vente en lot de boissons et de snacks.
@@ -109,6 +113,13 @@ A chaque changement (changement de prix, nouveauté, etc) le PDF est réenvoyé.
 - https://www.simoneasoif.be/
 - https://www.belgiancraftdrinks.be/
 - https://toogoodtogo.be/fr-be/business
+
+## Inspiration URL to keep
+- https://zulu.longines.com/
+- https://www.uplabs.com/posts/creative-agency-react-nextjs-template
+- https://www.uplabs.com/posts/rundle-bike-landing-page-design
+- https://en.yfood.eu/
+- 
 
 ## Design
 
