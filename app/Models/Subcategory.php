@@ -23,4 +23,13 @@ class Subcategory extends Model
             ->withTimestamps()
             ->using(ProductSubcategory::class);
     }
+    public function scopeDrinks($query)
+    {
+        $query->where('category_id', '=', 1);
+    }
+
+    public function scopeSnacks($query)
+    {
+        $query->where('category_id', '=', 2);
+    }
 }

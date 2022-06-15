@@ -142,6 +142,66 @@ var FlashMessage = /*#__PURE__*/function () {
 
 /***/ }),
 
+/***/ "./resources/js/parts/ToggleAccountDialog.js":
+/*!***************************************************!*\
+  !*** ./resources/js/parts/ToggleAccountDialog.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Counter)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var Counter = /*#__PURE__*/function () {
+  function Counter(element) {
+    var _this = this;
+
+    _classCallCheck(this, Counter);
+
+    this.element = element;
+    this.dialog = document.querySelector('.account-menu');
+    this.element.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      _this.dialog.classList.toggle('active-account-dialog');
+
+      console.log('active');
+    });
+    document.addEventListener('click', function (e) {
+      return _this.bodyClick(e);
+    });
+  }
+
+  _createClass(Counter, [{
+    key: "bodyClick",
+    value: function bodyClick(e) {
+      if (e.target === this.element || this.element.contains(e.target) || e.target === this.dialog || this.dialog.contains(e.target)) {
+        return;
+      }
+
+      this.dialog.classList.remove('active-account-dialog');
+    }
+  }], [{
+    key: "selector",
+    get: function get() {
+      return '.account';
+    }
+  }]);
+
+  return Counter;
+}();
+
+
+
+/***/ }),
+
 /***/ "./resources/js/parts/ToggleMenu.js":
 /*!******************************************!*\
   !*** ./resources/js/parts/ToggleMenu.js ***!
@@ -161,19 +221,73 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 var Counter = /*#__PURE__*/function () {
   function Counter(element) {
+    var _this = this;
+
     _classCallCheck(this, Counter);
 
-    console.log('hello');
+    this.element = element;
+    this.button = this.element.querySelector('.menu-item-button');
+    this.submenu = this.element.querySelector('.menu-item-child');
+
+    if (this.button !== null) {
+      this.button.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        _this.submenu.classList.toggle('active-menu');
+
+        _this.button.classList.toggle('active-arrow');
+
+        console.log('active');
+      });
+    }
   }
 
   _createClass(Counter, null, [{
+    key: "selector",
+    get: function get() {
+      return '.menu-item';
+    }
+  }]);
+
+  return Counter;
+}();
+
+
+
+/***/ }),
+
+/***/ "./resources/js/parts/js-enabled.js":
+/*!******************************************!*\
+  !*** ./resources/js/parts/js-enabled.js ***!
+  \******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ FlashMessage)
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var FlashMessage = /*#__PURE__*/function () {
+  function FlashMessage(element) {
+    _classCallCheck(this, FlashMessage);
+
+    element.classList.add('js-enabled');
+  }
+
+  _createClass(FlashMessage, null, [{
     key: "selector",
     get: function get() {
       return 'body';
     }
   }]);
 
-  return Counter;
+  return FlashMessage;
 }();
 
 
@@ -201,7 +315,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var map = {
 	"./FlashMessage.js": "./resources/js/parts/FlashMessage.js",
-	"./ToggleMenu.js": "./resources/js/parts/ToggleMenu.js"
+	"./ToggleAccountDialog.js": "./resources/js/parts/ToggleAccountDialog.js",
+	"./ToggleMenu.js": "./resources/js/parts/ToggleMenu.js",
+	"./js-enabled.js": "./resources/js/parts/js-enabled.js"
 };
 
 

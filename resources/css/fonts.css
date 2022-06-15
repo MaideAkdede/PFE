@@ -1,0 +1,38 @@
+@font-face {
+    font-family: 'Lato Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Lato Regular'), url('../fonts/lato/Lato-Regular.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Lato Bold';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Lato Bold'), url('../fonts/lato/Lato-Bold.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Lato Black';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Lato Black'), url('../fonts/lato/Lato-Black.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Raleway Semi';
+    src: local('Raleway Semi'), url('../fonts/raleway/Raleway-Semibold.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Raleway Med';
+    src: local('Raleway Med'), url('../fonts/raleway/Raleway-Medium.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Raleway Bold';
+    font-style: normal;
+    font-weight: 600;
+    src: local('Raleway Bold'), url('../fonts/raleway/Raleway-Bold.ttf') format("truetype");
+}
+@font-face {
+    font-family: 'Raleway Black';
+    font-style: normal;
+    font-weight: 800;
+    src: local('Raleway Black'), url('../fonts/raleway/Raleway-Black.ttf') format("truetype");
+}

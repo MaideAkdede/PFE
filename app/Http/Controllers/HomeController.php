@@ -8,11 +8,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-        $drinks = Product::drinks()->take(6)->get();
-        $snacks = Product::snacks()->take(6)->get();
+        $products = Product::take(10)->orderBy('created_at')->get();
+
         return view('index', [
-            'drinks' => $drinks,
-            'snacks' => $snacks,
+            'products' => $products,
             'title' => 'Page d‘accueil',
         ]);
     }

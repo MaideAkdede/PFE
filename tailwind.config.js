@@ -3,38 +3,62 @@ module.exports = {
         "./resources/**/*.blade.php",
     ],
     theme: {
+        fontFamily: {
+            'lato-regular': ['Lato Regular'],
+            'lato-bold': ['Lato Bold'],
+            'lato-black': ['Lato Black'],
+            'raleway-medium': ['Raleway Med'],
+            'raleway-semi': ['Raleway Semi'],
+            'raleway-bold': ['Raleway Bold'],
+            'raleway-black': ['Raleway Black'],
+        },
+        screens: {
+            'xs': '320px',
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+        },
         extend: {
             colors: {
                 'primary': {
-                    'regular': '#069ab5',
-                    'dark': '#078197',
+                    'regular': '#FFD786',
+                    'light': '#FFE8B9',
+                    'dark': '#FFC360',
                 },
-                'secondary': {
-                    'regular': '#FFBC4D',
-                    'dark': '#FB9823',
-                },
-                'content':{
-                    'light':'#A5A5A5',
-                    'regular':'#777777',
-                    'dark':'#656565'
+                'content': {
+                    'regular': '#6E6E6E',
+                    'light': '#707070',
                 },
                 'error': '#E51F1F',
             },
             backgroundImage: {
-                'texture': "url('../images/bg-bubbless.png')",
-                'textures': "url('../images/bg-bubbles2.png')"
+                'texture': "url('../images/bg-texture.svg')",
+                'wave': "url('../images/wave.svg')",
             },
             zIndex: {
-                1:1,
-                2:2,
-                3:3,
-                4:4,
+                1: 1,
+                2: 2,
+                3: 3,
+                4: 4,
+                5: 5,
+            },
+            width:{
+                'thumbnail':'120px'
+            },
+            height:{
+                'thumbnail':'220px'
+            },
+            minHeight:{
+                '90vh': '90vh',
             }
         },
     },
     plugins: [
         require('postcss-import'),
         require('tailwindcss'),
-        require('autoprefixer')
+        require('autoprefixer'),
+        require('@tailwindcss/line-clamp'),
     ],
 }

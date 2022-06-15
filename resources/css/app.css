@@ -2,10 +2,18 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@import "reset.css";
+@import "fonts.css";
+@import "menu.css";
+
 @layer components {
+    body {
+        @apply font-lato-regular;
+    }
+
     /* Admin Form Hidden Fields */
     #toggle_new_brand:checked ~ .new_brand {
-        @apply block;
+        @apply flex flex-col;
     }
 
     .new_brand {
@@ -13,18 +21,65 @@
     }
 
     #toggle_new_subcategories:checked ~ .new_subcategories {
-        @apply block;
+        @apply flex;
     }
 
     .new_subcategories {
         @apply hidden;
     }
+
     /* BUTTON */
-    .button-primary{
-        @apply z-1 px-5 py-2 box-border uppercase font-medium text-white tracking-widest rounded-md overflow-hidden shadow-lg shadow-primary-regular/50 bg-primary-regular relative before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-primary-dark before:scale-x-0 hover:before:scale-x-100 before:duration-[.3s] before:ease-out before:origin-[0_50%] before:-z-1 transition-all;
+    .button-primary {
+        @apply z-1 px-5 py-2 border border-black border-2 box-border uppercase font-medium text-white tracking-widest rounded-lg overflow-hidden bg-black relative before:content-[''] before:absolute before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-white before:scale-x-0 hover:text-black hover:before:scale-x-100 before:duration-[.3s] before:ease-out before:origin-[0_50%] before:-z-1 transition-all;
     }
-    /* Link */
-    .link{
-        @apply underline font-bold text-primary-dark hover:text-white hover:no-underline rounded-md overflow-hidden py-1 px-1 relative before:content-[''] before:absolute before:rounded-md before:top-0 before:left-0 before:right-0 before:bottom-0 before:bg-primary-regular before:scale-x-0 hover:before:scale-x-100 before:duration-[.3s] before:ease-out before:origin-[0_50%] before:-z-1 transition-all;
+
+
+    footer ul a {
+        @apply hover:text-primary-regular focus:text-primary-regular;
     }
+
+    .link-underline {
+        @apply relative before:absolute before:content-[''] before:block before:w-full before:h-[2px] before:-bottom-1 before:left-0 before:bg-primary-dark before:scale-x-0 before:transition-all duration-300 ease-in hover:before:scale-x-100 before:origin-top-left;
+    }
+
+    .title-primary {
+        @apply text-3xl font-raleway-black uppercase mb-8;
+    }
+
+    .stroked {
+        @apply text-transparent duration-100 hover:text-primary-dark;
+        -webkit-text-stroke: 2px black;
+    }
+
+    @media screen and (min-width: 640px) {
+        .move {
+            -webkit-animation: glide 2s ease-in-out alternate infinite;
+        }
+        .move-two {
+            -webkit-animation: glide-two 2s ease-in-out 1s alternate infinite;
+        }
+
+        @-webkit-keyframes glide {
+            from {
+                left: -28%;
+                top: -130%;
+            }
+            to {
+                left: -25%;
+                top: -120%;
+            }
+        }
+        @-webkit-keyframes glide-two {
+            from {
+                right: -45%;
+                bottom: -130%;
+            }
+            to {
+                right: -48%;
+                bottom: -120%;
+            }
+        }
+    }
+
 }
+
