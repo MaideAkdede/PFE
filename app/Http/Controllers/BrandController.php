@@ -10,18 +10,21 @@ class BrandController extends Controller
 {
     public function index()
     {
-        $brands = Brand::paginate(5)->sortBy('name');
+        $brands = Brand::where('deleted_at', null)->paginate(12)->sortBy('name');
         return view('brands.index', [
             'brands' => $brands,
-            'title' => 'Les marques que nous vendons',
+            'title' => 'Les marques disponibles',
             'route' => '/marques/',
         ]);
     }
 
-    public function show(Brand $brand)
+    public  function show(Brand $brand)
     {
+        if($brand->deleted_at != null){
+            abort(404);
+        }
         $title = "Tous les produits de {$brand->name}";
-        //$products = Product::where('brand_id', '=', $brand->id)->paginate(5)->get();
-        return view('brands.show', compact('title', 'brand'));
+        $products = $brand->products()->paginate(12);
+        return view('brands.show', compact('title', 'brand', 'products'));
     }
 }

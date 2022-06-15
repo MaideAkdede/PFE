@@ -3,14 +3,10 @@
         {{ $title }}
     </x-slot>
     <x-slot name="content">
-        <h1 class="text-3xl font-bold underline text-primary">
-            {{$brand->name}}
-        </h1>
-        <div class="">
-            @foreach($brand->products as $product)
-                <li>
-                    <a href="/{{$product->category->slug}}s/{{$product->slug}}">{{$product->name}}</a>
-                </li>
+        <x-title>{{$brand->name}}</x-title>
+        <div class="px-5 max-w-7xl mx-auto grid xs:grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-10">
+            @foreach($products as $product)
+                <x-card :product="$product" :subcategories="$product->subcategories" :route="$product->category->slug"/>
             @endforeach
         </div>
     </x-slot>

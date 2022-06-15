@@ -27,7 +27,7 @@ class LoginLogoutController extends Controller
             // session fixation
             session()->regenerate();
             // redirect
-            return redirect('/')->with('success', 'Bonjour, content de vous revoir');
+            return redirect('/')->with('success', 'Bonjour, content de vous revoir ☀️');
         }
 
         // redirect if auth fail
@@ -37,6 +37,6 @@ class LoginLogoutController extends Controller
     public function destroy()
     {
         auth()->logout();
-        return redirect('/')->with('success', 'Aurevoir');
+        return redirect('/')->with('success', 'Au revoir & à très bientôt 👋');
     }
 }

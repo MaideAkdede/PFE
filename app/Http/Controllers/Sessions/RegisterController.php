@@ -22,6 +22,8 @@ class RegisterController extends Controller
         $attributes = request()->validate([
             'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
             'password' => ['required', 'min:5', 'max:255'],
+            'first_name' => ['required', 'max:255'],
+            'last_name' => ['required', 'max:255'],
         ]);
 
          // Store datas into database
@@ -30,7 +32,7 @@ class RegisterController extends Controller
         // Login
         auth()->login($user);
 
-        return redirect('/')->with('success', 'Vous êtes bien inscrit');
+        return redirect('/')->with('success', 'Bienvenue sur TopSoda !');
     }
 
 }

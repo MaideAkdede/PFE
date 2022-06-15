@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminBrandController;
+use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminProductController;
+use App\Http\Controllers\Admin\AdminSubcategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -39,8 +43,7 @@ Route::get('/marques/{brand:slug}', [BrandController::class, 'show']);
 //
 // Show all the subcategories && single subcategory w/ it's related products
 //
-Route::get('/sous-categories', [\App\Http\Controllers\SubcategoryController::class, 'index']);
-Route::get('/sous-categories/{subcategory:slug}', [\App\Http\Controllers\SubcategoryController::class, 'show']);
+Route::get('/categories/{subcategory:slug}', [\App\Http\Controllers\SubcategoryController::class, 'show']);
 //
 //
 //
@@ -57,9 +60,32 @@ Route::middleware('auth')->group(function () {
 
 // ADMIN ONLY
 Route::middleware('admin')->group(function () {
-    // Add & edit Products
-    Route::get('/admin/produits/ajouter', [ProductController::class, 'create']);
-    Route::post('/admin/produits/ajouter', [ProductController::class, 'store']);
-    // Add & edit subcategory
-    // Add & edit brands
+    // Dashboard
+    Route::get('/admin', [AdminHomeController::class, 'index']);
+    // PRODUCTS
+    // Index
+    Route::get('/admin/produits/', [AdminProductController::class, 'index']);
+    // Add & Store Product
+    Route::get('/admin/produits/ajouter', [AdminProductController::class, 'create']);
+    Route::post('/admin/produits/ajouter', [AdminProductController::class, 'store']);
+    // Edit Product
+    Route::get('/admin/produits/{product}/modifier', [AdminProductController::class, 'edit']);
+    //
+    // SUBCATEGORIES
+    // Subcatgories List Admin
+    Route::get('/admin/sous-categories/', [AdminBrandController::class, 'index']);
+    // Add & Store Brand
+    Route::get('/admin/sous-categories/ajouter', [AdminSubcategoryController::class, 'create']);
+    Route::post('/admin/sous-categories/ajouter', [AdminSubcategoryController::class, 'store']);
+    //
+    // BRANDS
+    // Brands Index
+    Route::get('/admin/marques/', [AdminBrandController::class, 'index']);
+    // Add & Store Brand
+    Route::get('/admin/marques/ajouter', [AdminBrandController::class, 'create']);
+    Route::post('/admin/marques/ajouter', [AdminBrandController::class, 'store']);
+    // Edit Brand
+    Route::get('/admin/marques/{brand}/modifier', [AdminBrandController::class, 'edit']);
+    Route::patch('/admin/marques/{brand}', [AdminBrandController::class, 'update']);
+
 });

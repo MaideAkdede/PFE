@@ -1,0 +1,42 @@
+#menu_button:checked ~ #menu {
+    @apply translate-x-0 drop-shadow-lg;
+}
+
+#menu_button ~ #menu a {
+    tab-index: -1;
+}
+
+#menu_button:checked ~ #menu a {
+    tab-index: 1;
+}
+
+#menu_button:checked ~ #menu_button_label .close {
+    @apply block;
+}
+
+#menu_button:checked ~ #menu_button_label .open {
+    @apply hidden;
+}
+
+.js-enabled .menu-item-child.active-menu {
+    height: 100%;
+    opacity: 1;
+}
+
+.js-enabled .menu-item-child {
+    height: 0;
+    opacity: 0;
+}
+
+.js-enabled .active-arrow {
+    @apply rotate-180;
+}
+
+
+.js-enabled .account-menu {
+    @apply hidden;
+}
+
+.js-enabled .account-menu.active-account-dialog {
+    @apply flex;
+}

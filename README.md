@@ -119,6 +119,7 @@ A chaque changement (changement de prix, nouveauté, etc) le PDF est réenvoyé.
 - https://www.uplabs.com/posts/creative-agency-react-nextjs-template
 - https://www.uplabs.com/posts/rundle-bike-landing-page-design
 - https://en.yfood.eu/
+- https://www.luckybeard.com/what-we-do
 - 
 
 ## Design
