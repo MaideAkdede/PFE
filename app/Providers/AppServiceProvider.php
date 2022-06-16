@@ -40,10 +40,6 @@ class AppServiceProvider extends ServiceProvider
         // Pagination
         Paginator::defaultView('pagination::default');
 
-        // Share Data with all Views
-        View::share([
-            'snacks_subcategories'=>Subcategory::snacks()->orderBy('name')->get(),
-            'drinks_subcategories'=>Subcategory::drinks()->orderBy('name')->get(),
-        ]);
+
     }
 }
