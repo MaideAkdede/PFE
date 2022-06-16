@@ -6,9 +6,9 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('storage/images/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('storage/images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('storage/images/favicon/favicon-16x16.png') }}">
     <title> {{ $title }} - Top Soda</title>
 </head>
 <body class="flex flex-col min-h-screen">
@@ -49,8 +49,8 @@
                     <div class="menu-item">
                         <div class="relative">
                             <a class="p-5 w-screen block duration-100 hover:bg-primary-light hover:underline"
-                               href="/boissons"
-                               title="voir toutes les boissons">Mon compte</a>
+                               href="/mon-compte"
+                               title="Accéder à l'administration">Mon compte</a>
                             <a href="/"
                                class="absolute z-2 top-1/2 -translate-y-1/2 right-5 bg-black block aspect-square w-[42] h-[42px] grid place-content-center rounded-md menu-item-button duration-150 fill-white">
                                 <span class="sr-only">Sous-catégories de mon compte</span>
@@ -65,6 +65,8 @@
 
                             {{-- Si Administrateur --}}
                             @can('admin')
+                                <a href="/admin"
+                                   class="p-5 pl-10 w-screen block duration-100 hover:bg-primary-light hover:underline">Administration</a>
                                 <a href="/admin/produits/ajouter"
                                    class="p-5 pl-10 w-screen block duration-100 hover:bg-primary-light hover:underline">Ajouter
                                     produit</a>
@@ -218,7 +220,7 @@
     {{ $content }}
 </main>
 
-<svg class="w-screen h-[75px]">
+<svg class="w-screen h-[75px] mt-20">
     <use xlink:href="#wave-footer"></use>
 </svg>
 <footer class="bg-black text-white">
@@ -305,7 +307,7 @@
                     <svg class="w-[20px] aspect-square">
                         <use xlink:href="#puce"></use>
                     </svg>
-                    <a href="/#how-to" title="" class="link-underline">Comment réserver ?</a>
+                    <a href="/#comment-ca-marche" title="" class="link-underline">Comment réserver ?</a>
                 </li>
             </ul>
         </div>

@@ -9,12 +9,10 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index() {
-        $products = Product::take(10)->orderBy('created_at')->get();
+        $products = Product::take(10)->where('deleted_at', '=', null)->orderBy('created_at')->get();
+        $brands = Brand::take(10)->where('deleted_at', '=', null)->orderBy('created_at')->get();
 
-        return view('index', [
-            'products' => $products,
-            'title' => 'Page d‘accueil',
-        ]);
+        return view('index', compact('products', 'brands'));
     }
     public function search(){
         $request = request()->query('recherche');

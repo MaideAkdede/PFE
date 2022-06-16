@@ -42,7 +42,7 @@ class AdminBrandController extends Controller
         $attributes['image'] = request()->file('image');
         $now = Carbon::now()->toDateTimeString();
 
-        $resize = Image::make($attributes['image'])->resize(200, null, function ($constraint) {
+        $resize = Image::make($attributes['image'])->resize(150, null, function ($constraint) {
             $constraint->aspectRatio();
         })->encode();
 
@@ -64,35 +64,41 @@ class AdminBrandController extends Controller
 
         return back()->with('message', "La marque $brand->name a bien été ajoutée !");
     }
-    public function edit(Brand $brand){
+
+    public function edit(Brand $brand)
+    {
         $title = 'Modifier :';
         return view('admin.brands.edit',
             compact('title', 'brand'));
     }
-    public function update(Brand $brand){
+
+    public function update(Brand $brand)
+    {
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('brands', 'name')->ignore($brand->id)],
-            'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'image' => 'wimage|mimes:jpeg,jpg,png|max:2048',
         ]);
+        if (request()->file('image')) {
+            /* Store image in storage file */
+            $image = request()->file('image');
+            $not_resized = request()->file('image')->store('images/brands/original');
+            $now = Carbon::now()->toDateTimeString();
+            $resize = Image::make($image)->resize(150, null, function ($constraint) {
+                $constraint->aspectRatio();
+            })->encode();
+            $hash = md5($image->__toString() . $now);
+            $image = "images/brands/thumbnail/{$hash}.{$image->extension()}";
+            Storage::put($image, $resize);
 
-        /* Store image in storage file */
-        $image = request()->file('image');
-        $not_resized = request()->file('image')->store('images/brands/original');
-        $now = Carbon::now()->toDateTimeString();
-        $resize = Image::make($image)->resize(200, null, function ($constraint) {
-            $constraint->aspectRatio();
-        })->encode();
-        $hash = md5($image->__toString() . $now);
-        $image = "images/brands/thumbnail/{$hash}.{$image->extension()}";
-        Storage::put($image, $resize);
+            $attributes['image'] = $not_resized;
+            $attributes['thumbnail'] = $image;
 
-        $attributes['image'] = $not_resized;
-        $attributes['thumbnail'] = $image;
+        }
         $attributes['slug'] = Str::slug($attributes['name'], '-');
         $attributes['updated_at'] = now();
 
         $brand->update($attributes);
 
-        return back()->with('message', "Modification enregistrée");
+        return back()->with('message', "Modifications enregistrées");
     }
 }

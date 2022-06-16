@@ -1,10 +1,18 @@
 @props(['product', 'subcategories'])
 <article class="relative overflow-hidden rounded-md group p-2 flex flex-col gap-1.5">
+    {{-- Price Tag --}}
+    <div class="bg-white text-center absolute right-0 top-1/3 rounded-l-md px-2">
+        <p class="font-lato-bold text-2xl">{{$product->price}}€</p>
+        <p class="">{{$product->number}}<span class=""> x </span>{{$product->quantity}}{{$product->unity}}
+        </p>
+    </div>
     {{--Thumbnail--}}
     <div class="mb-5 mx-auto h-thumbnail w-thumbnail overflow-hidden">
+        <a href="/{{$product->category->slug}}s/{{$product->slug}}">
         <img class="h-full object-cover"
              src="@if(isset($product->image)){{asset('storage/'.$product->image)}}@else {{asset('/images/image-not-found.png')}}@endif"
              alt="{{$product->name}}">
+        </a>
     </div>
     {{-- TAGS --}}
     @if($subcategories)

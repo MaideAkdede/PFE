@@ -12,6 +12,7 @@
                     @csrf
                     <x-form.input type="text" name="first_name" label="Prénom" placeholder="Jane"/>
                     <x-form.input type="text" name="last_name" label="Nom" placeholder="Doe"/>
+                    <x-form.input type="text" name="phone" label="Numéro de téléphone" placeholder="0412345456"/>
                     <x-form.input type="email" name="email" label="Adresse e-mail" placeholder="jane.doe@hotmail.com"/>
                     <x-form.input type="password" name="password" label="Mot de passe" placeholder="********"/>
                     <x-form.button>M'inscrire</x-form.button>

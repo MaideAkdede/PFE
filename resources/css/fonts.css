@@ -17,6 +17,10 @@
     src: local('Lato Black'), url('../fonts/lato/Lato-Black.ttf') format("truetype");
 }
 @font-face {
+    font-family: 'Raleway Regular';
+    src: local('Raleway Regular'), url('../fonts/raleway/Raleway-Regular.ttf') format("truetype");
+}
+@font-face {
     font-family: 'Raleway Semi';
     src: local('Raleway Semi'), url('../fonts/raleway/Raleway-Semibold.ttf') format("truetype");
 }

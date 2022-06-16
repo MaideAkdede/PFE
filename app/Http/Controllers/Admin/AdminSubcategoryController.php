@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -18,46 +19,54 @@ class AdminSubcategoryController extends Controller
 
     public function create()
     {
-        $title = 'Ajouter une nouvelle sous-catégories';
+        $title = 'Ajouter une nouvelle sous-catégorie';
+        $categories = Category::all();
         return view('admin.subcategories.create',
-            compact('title'));
+            compact('title', 'categories'));
     }
 
     public function store()
     {
         /* Validate attributes*/
         $attributes = request()->validate([
-            'name' => ['required', Rule::unique('brands', 'name')],
-            'image' => 'required|image|mimes:jpeg,jpg,png|max:2048',
+            'name' => ['required', Rule::unique('subcategories', 'name')],
+            'category_id' => ['required', Rule::exists('categories', 'id')],
         ]);
 
-        /* Store image in storage file */
-
-        $not_resized = request()->file('image')->store('images/brands/original');
-
-        $attributes['image'] = request()->file('image');
-        $now = Carbon::now()->toDateTimeString();
-
-        $resize = Image::make($attributes['image'])->resize(200, null, function ($constraint) {
-            $constraint->aspectRatio();
-        })->encode();
-
-        $hash = md5($attributes['image']->__toString() . $now);
-
-        $attributes['image'] = "images/brands/thumbnail/{$hash}.{$attributes['image']->extension()}";
-
-        Storage::put($attributes['image'], $resize);
-
-        /* Create New Brand */
-        $brand = Brand::create([
+        /* Store to DB */
+        $item = Subcategory::create([
             'name' => ucwords($attributes['name']),
             'slug' => Str::slug($attributes['name'], '-'),
-            'thumbnail' => $attributes['image'],
-            'image' => $not_resized,
+            'category_id' => $attributes['category_id'],
             'created_at' => now(),
         ]);
 
+        return back()->with('message', "La sous-catégorie $item->name a bien été ajouté !");
+    }
 
-        return back()->with('message', "La marque $brand->name a bien été ajoutée !");
+    public function edit(Subcategory $subcategory)
+    {
+        $title = 'Modifier :';
+        $categories = Category::all();
+
+        return view('admin.subcategories.edit',
+            compact('title', 'categories', 'subcategory'));
+    }
+
+    public function update(Subcategory $subcategory)
+    {
+        /* Validate attributes*/
+        $attributes = request()->validate([
+            'name' => ['required', Rule::unique('subcategories', 'name')->ignore($subcategory->id)],
+            'category_id' => ['required', Rule::exists('categories', 'id')],
+        ]);
+
+        $attributes['updated_at'] = now();
+        $attributes['name'] = ucwords($attributes['name']);
+        $attributes['slug'] = Str::slug($attributes['name'], '-');
+
+        $subcategory->update($attributes);
+
+        return back()->with('message', "$subcategory->name a bien été modifié ! ");
     }
 }

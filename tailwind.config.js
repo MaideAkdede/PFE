@@ -7,6 +7,7 @@ module.exports = {
             'lato-regular': ['Lato Regular'],
             'lato-bold': ['Lato Bold'],
             'lato-black': ['Lato Black'],
+            'raleway-regular': ['Raleway Regular'],
             'raleway-medium': ['Raleway Med'],
             'raleway-semi': ['Raleway Semi'],
             'raleway-bold': ['Raleway Bold'],
@@ -34,8 +35,8 @@ module.exports = {
                 'error': '#E51F1F',
             },
             backgroundImage: {
-                'texture': "url('../images/bg-texture.svg')",
-                'wave': "url('../images/wave.svg')",
+                'texture': "url('~/images/bg-bubbles.png')",
+                'wave': "url('~/images/wave.svg')",
             },
             zIndex: {
                 1: 1,

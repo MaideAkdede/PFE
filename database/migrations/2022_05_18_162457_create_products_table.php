@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('category_id')->nullable();
             $table->foreignId('brand_id')->nullable();
             $table->boolean('out_of_stock')->default(false);
+            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
     }

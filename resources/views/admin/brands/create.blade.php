@@ -3,6 +3,7 @@
         {{ $title }}
     </x-slot>
     <x-slot name="content">
+        <x-admin-back/>
         <div class="my-10 md:max-w-xl px-5 pt-10 pb-14 rounded-lg mx-5 md:mx-auto border border-primary-dark">
             <x-title>
                 {{$title}}
