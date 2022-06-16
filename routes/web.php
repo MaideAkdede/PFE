@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 // Index
 //
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/recherche', [HomeController::class, 'search']);
 //
 // Show all the drinks && single drink
 //

@@ -90,4 +90,7 @@
     <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 428.243 48.8" id="wave-header" preserveAspectRatio="none">
         <path d="M214.419,13.124C156.874,32.792,61.56,57.033,0,4.319V48.8H428.243V24.94C376.646-6.89,268.247-5.274,214.419,13.124Z" transform="translate(0 0)" fill="#fff"></path>
     </symbol>
+    <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27 27.007" id="search">
+        <path d="M31.184,29.545l-7.509-7.58a10.7,10.7,0,1,0-1.624,1.645l7.46,7.53a1.156,1.156,0,0,0,1.631.042A1.163,1.163,0,0,0,31.184,29.545ZM15.265,23.7a8.45,8.45,0,1,1,5.977-2.475A8.4,8.4,0,0,1,15.265,23.7Z" transform="translate(-4.5 -4.493)"></path>
+    </symbol>
 </svg>

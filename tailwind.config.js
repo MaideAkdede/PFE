@@ -52,6 +52,10 @@ module.exports = {
             },
             minHeight:{
                 '90vh': '90vh',
+                '75vh': '75vh',
+            },
+            minWidth:{
+                '80vw': '80vw',
             }
         },
     },
