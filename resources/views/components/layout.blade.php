@@ -38,6 +38,8 @@
             {{-- NAVIGATION MENU --}}
             <nav id="menu"
                  class="-translate-x-full fixed overflow-y-scroll duration-200 top-0 left-0 bg-white h-full w-full grid place-content-start font-raleway-bold text-xl divide-y pt-20 uppercase z-5">
+                {{-- SEARCH BAR IN MENU--}}
+                <x-search-form class="w-full font-lato-regular"/>
                 {{-- HOME LINK --}}
                 <a class="p-5 w-screen block duration-100 hover:bg-primary-light hover:underline"
                    href="/"

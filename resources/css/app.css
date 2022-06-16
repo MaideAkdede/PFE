@@ -80,6 +80,15 @@
             }
         }
     }
-
+    .error-svg-path{
+        stroke-dasharray: 346.56011962890625;
+        stroke-dashoffset: 346.56011962890625;
+        animation: dash 10s linear alternate infinite;
+    }
+    @keyframes dash {
+        to {
+            stroke-dashoffset: 0;
+        }
+    }
 }
 
