@@ -29,7 +29,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/recherche', [HomeController::class, 'search']);
 Route::get('/contact', [ContactController::class, 'index']);
 Route::post('/contact', [ContactController::class, 'send']);
-
+// 404
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
 //
 // Show all the drinks && single drink
 //
