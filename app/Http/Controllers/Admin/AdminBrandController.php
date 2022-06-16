@@ -76,7 +76,7 @@ class AdminBrandController extends Controller
     {
         $attributes = request()->validate([
             'name' => ['required', Rule::unique('brands', 'name')->ignore($brand->id)],
-            'image' => 'wimage|mimes:jpeg,jpg,png|max:2048',
+            'image' => 'image|mimes:jpeg,jpg,png|max:2048',
         ]);
         if (request()->file('image')) {
             /* Store image in storage file */
