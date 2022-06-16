@@ -46,8 +46,9 @@ class ProductController extends Controller
     public function showDrink(Product $product)
     {
         if ($product->category->slug == 'boisson') {
+            $similars = Product::where('deleted_at', '=', null)->where('id','<>', $product->id)->take(6)->get();
             $title = "{$product->name} de {$product->brand->name}";
-            return view('products.show', compact('product', 'title'));
+            return view('products.show', compact('product','similars', 'title'));
         } else {
             abort(404);
         }
@@ -56,8 +57,9 @@ class ProductController extends Controller
     public function showSnack(Product $product)
     {
         if ($product->category->slug == 'snack') {
+            $similars = Product::snacks()->where('deleted_at', '=', null)->where('id','<>', $product->id)->take(6)->get();
             $title = "{$product->name} de {$product->brand->name}";
-            return view('products.show', compact('product', 'title'));
+            return view('products.show', compact('product','similars', 'title'));
         } else {
             abort(404);
         }

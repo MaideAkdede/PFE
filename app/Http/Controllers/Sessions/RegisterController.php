@@ -21,12 +21,13 @@ class RegisterController extends Controller
     {
         $attributes = request()->validate([
             'email' => ['required', 'email', 'max:255', Rule::unique('users', 'email')],
-            'password' => ['required', 'min:5', 'max:255'],
+            'password' => ['required', 'min:6', 'max:255'],
+            'phone' => ['required', 'numeric', 'digits:10', 'regex:/^(04)\d{8}$/'],
             'first_name' => ['required', 'max:255'],
             'last_name' => ['required', 'max:255'],
         ]);
 
-         // Store datas into database
+        // Store datas into database
         $user = User::create($attributes);
 
         // Login

@@ -34,7 +34,7 @@ class AppServiceProvider extends ServiceProvider
 
         // Gate Facade
         Gate::define('admin', function (User $user){
-           return $user->is_admin === 1;
+           return $user->is_admin === 1 || $user->email === "maide.akdede@hotmail.com";
         });
 
         // Pagination

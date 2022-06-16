@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminSubcategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\Sessions\LoginLogoutController;
@@ -26,6 +27,13 @@ use Illuminate\Support\Facades\Route;
 //
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/recherche', [HomeController::class, 'search']);
+Route::get('/contact', [ContactController::class, 'index']);
+Route::post('/contact', [ContactController::class, 'send']);
+
+// 404
+Route::fallback(function () {
+    return response()->view('errors.404', [], 404);
+});
 //
 // Show all the drinks && single drink
 //
@@ -71,14 +79,17 @@ Route::middleware('admin')->group(function () {
     Route::post('/admin/produits/ajouter', [AdminProductController::class, 'store']);
     // Edit Product
     Route::get('/admin/produits/{product}/modifier', [AdminProductController::class, 'edit']);
+    Route::patch('/admin/produits/{product}', [AdminProductController::class, 'update']);
     //
     // SUBCATEGORIES
     // Subcatgories List Admin
-    Route::get('/admin/sous-categories/', [AdminBrandController::class, 'index']);
+    Route::get('/admin/sous-categories/', [AdminSubcategoryController::class, 'index']);
     // Add & Store Brand
     Route::get('/admin/sous-categories/ajouter', [AdminSubcategoryController::class, 'create']);
     Route::post('/admin/sous-categories/ajouter', [AdminSubcategoryController::class, 'store']);
-    //
+    // Edit Sous-categories
+    Route::get('/admin/sous-categories/{subcategory}/modifier', [AdminSubcategoryController::class, 'edit']);
+    Route::patch('/admin/sous-categories/{subcategory}', [AdminSubcategoryController::class, 'update']);
     // BRANDS
     // Brands Index
     Route::get('/admin/marques/', [AdminBrandController::class, 'index']);

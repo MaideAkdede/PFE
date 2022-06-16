@@ -43,7 +43,7 @@
     }
 
     .title-primary {
-        @apply text-3xl font-raleway-black uppercase mb-8;
+        @apply text-xl sm:text-3xl font-raleway-black uppercase mb-8;
     }
 
     .stroked {

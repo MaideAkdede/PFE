@@ -18,6 +18,7 @@ return new class extends Migration
             $table->foreignId('category_id');
             $table->string('name');
             $table->string('slug')->unique();
+            $table->dateTime('deleted_at')->nullable();
             $table->timestamps();
         });
     }

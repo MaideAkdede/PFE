@@ -4,13 +4,7 @@
     </x-slot>
     <x-slot name="content">
         <div class="max-w-7xl px-5 mx-auto">
-            <a href="/admin" title="Page d'administration"
-               class="text-white bg-black inline-flex items-center px-3 py-1 button-primary gap-2 text-xs fill-white hover:fill-black">
-                <svg class="icon h-[20px] w-[30px] rotate-90">
-                    <use xlink:href="#arrow_down"></use>
-                </svg>
-                <span>Administration</span>
-            </a>
+            <x-admin-back/>
             <h1 class="title-primary text-center my-8">
                 Toutes les marques
             </h1>

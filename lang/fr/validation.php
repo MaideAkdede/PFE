@@ -152,5 +152,12 @@ return [
         'subcategories'=>'sous-catégories',
         'add_new_brand'=>'nouvelle marque',
         'add_new_subcategories'=>'nouvelles sous-catégories',
+        'phone'=>'numéro de téléphone',
+        'first_name'=>'prénom',
+        'last_name'=>'nom',
+        'full_name'=>'nom & prénom',
+        'subject'=>'sujet',
+        'password'=>'mot de passe',
+        'text'=>'message',
     ],
 ];

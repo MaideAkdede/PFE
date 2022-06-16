@@ -3,7 +3,7 @@
         Page introuvable
     </x-slot>
     <x-slot name="content">
-        <div class="max-w-7xl mx-auto px-5 grid place-content-center min-h-75vh mb-20">
+        <div class="max-w-7xl mx-auto px-5 grid place-content-center mb-20">
             <x-title>Page introuvable</x-title>
             <x-search-form class="w-full max-w-xl mx-auto"/>
             <svg class="w-screen h-auto max-w-2xl mx-auto opacity-20" xmlns="http://www.w3.org/2000/svg" width="79.075"
