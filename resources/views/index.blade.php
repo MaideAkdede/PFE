@@ -13,9 +13,9 @@
                     <a href="/snacks" class="text-5xl md:text-7xl stroked block mb-2 -mt-2">snacks</a>
                     en lot dès maintenant
                 </h1>
-                <img src="{{asset('storage/images/header/snack.png')}}" alt="Photo d'oreo"
+                <img src="{{asset('images/header/snack.png')}}" alt="Photo d'oreo"
                      class="sm:-z-1 move absolute -top-[45vh] -left-[25vw]">
-                <img src="{{asset('storage/images/header/drink.png')}}" alt="Photo d'une canette Fanta Orange"
+                <img src="{{asset('images/header/drink.png')}}" alt="Photo d'une canette Fanta Orange"
                      class="sm:-z-1 absolute move-two -bottom-[60vh] -right-[35vw]">
             </div>
             <svg class="absolute bottom-0 w-screen h-[75px]">
@@ -28,7 +28,7 @@
                 <div class="xs:grow relative overflow-hidden rounded-md group p-2 flex flex-col gap-1.5">
                     <div class="mb-5 mx-auto h-thumbnail w-thumbnail overflow-hidden">
                         <img class="h-full object-contain scale-125"
-                             src="{{asset('storage/images/categories/cat-2.png')}}"
+                             src="{{asset('images/categories/cat-2.png')}}"
                              alt="">
                     </div>
                     <a href="/snacks" title="Voir tous les snacks"
@@ -48,7 +48,7 @@
                 <div class="xs:grow relative overflow-hidden rounded-md group p-2 flex flex-col gap-1.5">
                     <div class="mb-5 mx-auto h-thumbnail w-thumbnail overflow-hidden">
                         <img class="h-full object-cover"
-                             src="{{asset('storage/images/categories/cat-1.png')}}"
+                             src="{{asset('images/categories/cat-1.png')}}"
                              alt="">
                     </div>
                     <a href="/boissons" title="Voir toutes les boissons"
@@ -81,7 +81,7 @@
                 <div
                     class="relative grow xs:shrink overflow-hidden rounded-md group p-2 flex flex-col justify-between items-center">
                     <h3 class="font-lato-black uppercase tracking-wider">Étape 1</h3>
-                    <img src="{{asset('storage/images/steps/step-1.png')}}" alt="">
+                    <img src="{{asset('images/steps/step-1.png')}}" alt="">
                     <p class="font-raleway-regular text-center">Choisissez vos produits et ajoutez les dans votre
                         panier</p>
                     <div
@@ -94,7 +94,7 @@
                 <div
                     class="relative grow overflow-hidden rounded-md group p-2 flex flex-col justify-between items-center">
                     <h3 class="font-lato-black uppercase tracking-wider">Étape 2</h3>
-                    <img src="{{asset('storage/images/steps/step-2.png')}}" alt="">
+                    <img src="{{asset('images/steps/step-2.png')}}" alt="">
                     <p class="font-raleway-regular text-center">Validez votre panier en choisissant une date qui vous
                         convient</p>
                     <div
@@ -107,7 +107,7 @@
                 <div
                     class="relative grow overflow-hidden rounded-md group p-2 flex flex-col justify-between items-center">
                     <h3 class="font-lato-black uppercase tracking-wider">Étape 3</h3>
-                    <img src="{{asset('storage/images/steps/step-3.png')}}" alt="">
+                    <img src="{{asset('images/steps/step-3.png')}}" alt="">
                     <p class="font-raleway-regular text-center">Attendez que votre commande soit validée et traitée</p>
                     <div
                         class="absolute bottom-0 left-0 right-0 -z-1 bg-primary-regular w-full h-full rounded-md overflow-hidden">
@@ -119,7 +119,7 @@
                 <div
                     class="relative grow overflow-hidden rounded-md group p-2 flex flex-col justify-between items-center">
                     <h3 class="font-lato-black uppercase tracking-wider">Étape 4</h3>
-                    <img src="{{asset('storage/images/steps/step-4.png')}}" alt="">
+                    <img src="{{asset('images/steps/step-4.png')}}" alt="">
                     <p class="font-raleway-regular text-center">La commande sera livré et vous payez à la livraison</p>
                     <div
                         class="absolute bottom-0 left-0 right-0 -z-1 bg-primary-regular w-full h-full rounded-md overflow-hidden">
