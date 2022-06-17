@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content=" TopSoda vend et livre près de 150 références de boissons et snacks en lot. Réservez dès maintenant sur notre site web. Livraison offerte à partir de 45€. Zone desservie: Liège et environs: Huy, Waremme, St Trond, Tongres, Riemst, Aubel, Herve, Verviers, Sprimont, Neupré, ...">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
@@ -49,7 +50,7 @@
                     <div class="menu-item">
                         <div class="relative">
                             <a class="p-5 w-screen block duration-100 hover:bg-primary-light hover:underline"
-                               href="/mon-compte"
+                               href="/admin"
                                title="Accéder à l'administration">Mon compte</a>
                             <a href="/"
                                class="absolute z-2 top-1/2 -translate-y-1/2 right-5 bg-black block aspect-square w-[42] h-[42px] grid place-content-center rounded-md menu-item-button duration-150 fill-white">
@@ -193,14 +194,12 @@
                        class="px-5 py-2.5 hover:bg-primary-regular focus:bg-primary-regular">S'inscrire</a>
                 @endguest
                 @auth()
-                    <a href="/mon-compte"
-                       class="px-5 py-2.5 hover:bg-primary-regular focus:bg-primary-regular">Mon compte</a>
                     @can('admin')
                         <a href="/admin"
                            class="px-5 py-2.5 hover:bg-primary-regular focus:bg-primary-regular">Administration
                         </a>
                         <a href="/admin/produits/ajouter"
-                           class="px-5 py-2.5 hover:bg-primary-regular focus:bg-primary-regular">Ajouter produit
+                           class="px-5 py-2.5 hover:bg-primary-regular focus:bg-primary-regular">Ajouter produits
                         </a>
                         <a href="/admin/marques/ajouter"
                            class="px-5 py-2.5 hover:bg-primary-regular focus:bg-primary-regular">Ajouter marques
@@ -286,14 +285,6 @@
                         <a href="/inscription" class="link-underline">S'inscrire</a>
                     </li>
                 @endguest
-                @auth()
-                    <li class="flex items-center gap-2 col-start-2">
-                        <svg class="w-[20px] aspect-square">
-                            <use xlink:href="#puce"></use>
-                        </svg>
-                        <a href="/mon-compte" class="link-underline">Mon compte</a>
-                    </li>
-                @endauth
                 @can('admin')
                     <li class="flex items-center gap-2 col-start-2">
                         <svg class="w-[20px] aspect-square">
