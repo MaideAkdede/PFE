@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminProductController;
 use App\Http\Controllers\Admin\AdminSubcategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
@@ -65,6 +66,10 @@ Route::middleware('guest')->group(function () {
 });
 Route::middleware('auth')->group(function () {
     Route::post('/deconnexion', [LoginLogoutController::class, 'destroy']);
+    //
+    Route::get('/panier', [CartController::class, 'index']);
+    Route::post('/ajouter-au-panier', [CartController::class, 'store']);
+    Route::delete('/panier/{cart}', [CartController::class, 'destroy']);
 });
 
 // ADMIN ONLY

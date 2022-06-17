@@ -168,7 +168,12 @@
                     <span class="sr-only">Panier</span>
                     @auth()
                         <span
-                            class="absolute -top-1 right-2 block aspect-square w-[18px] h-[18px] bg-primary-dark rounded-full grid place-content-center text-xs">0</span>
+                            class="absolute -top-1 right-2 block aspect-square w-[18px] h-[18px] bg-primary-dark rounded-full grid place-content-center text-xs">
+                            @php
+                                $cart = \App\Models\Cart::where('user_id', auth()->id())->get();
+                            @endphp
+                            {{count($cart)}}
+                        </span>
                     @endauth
                 </a>
                 <a href="#" title="Mon compte"

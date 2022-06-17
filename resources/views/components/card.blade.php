@@ -38,7 +38,9 @@
     @if($product->out_of_stock)
         <p class="z-1 px-5 py-2 uppercase font-medium text-white tracking-widest rounded-lg overflow-hidden bg-zinc-500 text-center text-sm">Rupture de stock</p>
     @else
-        <form action="">
+        <form action="/ajouter-au-panier" method="POST">
+            @csrf
+            <input type="hidden" name="product_id" value="{{$product->id}}">
             <button class="button-primary py-1 w-full">Ajouter</button>
         </form>
     @endif

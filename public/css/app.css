@@ -910,6 +910,9 @@ footer ul a:focus {
 .mt-1 {
   margin-top: 0.25rem;
 }
+.mt-2\.5 {
+  margin-top: 0.625rem;
+}
 .box-border {
   box-sizing: border-box;
 }
@@ -1676,6 +1679,9 @@ footer ul a:focus {
   --tw-text-opacity: 1;
   color: rgb(255 195 96 / var(--tw-text-opacity));
 }
+.text-error\/60 {
+  color: rgb(229 31 31 / 0.6);
+}
 .underline {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
@@ -1898,6 +1904,10 @@ footer ul a:focus {
 .hover\:underline:hover {
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
+}
+
+.hover\:opacity-100:hover {
+  opacity: 1;
 }
 
 .focus\:z-10:focus {

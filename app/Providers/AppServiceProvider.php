@@ -2,10 +2,12 @@
 
 namespace App\Providers;
 
+use App\Models\Cart;
 use App\Models\Subcategory;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -33,8 +35,8 @@ class AppServiceProvider extends ServiceProvider
         Model::unguard();
 
         // Gate Facade
-        Gate::define('admin', function (User $user){
-           return $user->is_admin === 1;
+        Gate::define('admin', function (User $user) {
+            return $user->is_admin === 1;
         });
 
         // Pagination
@@ -42,8 +44,14 @@ class AppServiceProvider extends ServiceProvider
 
         // Share Data with all Views
         View::share([
-            'snacks_subcategories'=>Subcategory::snacks()->orderBy('name')->get(),
-            'drinks_subcategories'=>Subcategory::drinks()->orderBy('name')->get(),
+            'snacks_subcategories' => Subcategory::snacks()->orderBy('name')->get(),
+            'drinks_subcategories' => Subcategory::drinks()->orderBy('name')->get(),
         ]);
+
+        if (auth()) {
+            View::share([
+                'cart_total' => Cart::where('user_id', Auth::user('id'))->get()
+            ]);
+        }
     }
 }
