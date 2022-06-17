@@ -5,7 +5,7 @@
     <x-slot name="content">
         <div class="max-w-7xl px-5 mx-auto">
             <div class="relative max-w-xs mx-auto py-5">
-                <div class="bg-white text-center absolute right-0 top-1/4 rounded-l-md px-2">
+                <div class="bg-white text-center absolute right-0 top-1/3 rounded-l-md px-2">
                     <p class="font-lato-bold text-2xl">{{$product->price}}€</p>
                     <p class="">{{$product->number}}<span class=""> x </span>{{$product->quantity}}{{$product->unity}}
                     </p>
@@ -14,8 +14,8 @@
                      alt="{{$product->name}}">
                 <a href="/marques/{{$product->brand->slug}}"
                    class="px-5 hover:underline font-raleway-medium">{{$product->brand->name}}</a>
-                <h1 class="px-5 uppercase text-3xl font-raleway-black tracking-wide whitespace-nowrap">{{$product->name}}</h1>
-                <div class="mx-5 mt-1">
+                <h1 class="px-5 uppercase text-3xl font-raleway-black tracking-wide">{{$product->name}}</h1>
+                <div class="mx-5 mt-1 flex flex-nowrap overflow-y-scroll gap-2">
                     @foreach($product->subcategories as $subcategory)
                         <a href="/categories/{{$subcategory->slug}}"
                            class="font-raleway-regular uppercase tracking-wide text-xs border-black border rounded px-2 py-1 hover:text-white hover:bg-black duration-150 whitespace-nowrap">{{$subcategory->name}}</a>
@@ -33,6 +33,10 @@
                     </div>
                 </div>
             </div>
+            {{-- ADD TO CART--}}
+            <form action="" class="w-full max-w-xs mx-auto mt-2.5 mb-10">
+                <x-form.button class="w-full">Ajouter</x-form.button>
+            </form>
             {{-- PARTIAL --}}
             @include('parts.single.information')
             {{-- SIMILAR PRODUCT --}}
