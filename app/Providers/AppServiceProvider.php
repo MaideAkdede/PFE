@@ -48,10 +48,5 @@ class AppServiceProvider extends ServiceProvider
             'drinks_subcategories' => Subcategory::drinks()->orderBy('name')->get(),
         ]);
 
-        if (auth()) {
-            View::share([
-                'cart_total' => Cart::where('user_id', Auth::user('id'))->get()
-            ]);
-        }
     }
 }
