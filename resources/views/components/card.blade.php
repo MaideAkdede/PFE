@@ -1,15 +1,15 @@
 @props(['product', 'subcategories'])
-<article class="relative overflow-hidden rounded-md group p-2 flex flex-col gap-1.5">
+<article itemscope itemtype="https://schema.org/Product" class="relative overflow-hidden rounded-md group p-2 flex flex-col gap-1.5">
     {{-- Price Tag --}}
-    <div class="bg-white text-center absolute right-0 top-1/3 rounded-l-md px-2">
-        <p class="font-lato-bold text-2xl">{{$product->price}}€</p>
+    <div class="bg-white text-center absolute right-0 top-1/3 rounded-l-md px-2"  itemscope itemtype="https://schema.org/Offer">
+        <p class="font-lato-bold text-2xl" itemprop="price">{{$product->price}}€</p>
         <p class="">{{$product->number}}<span class=""> x </span>{{$product->quantity}}{{$product->unity}}
         </p>
     </div>
     {{--Thumbnail--}}
     <div class="mb-5 mx-auto h-thumbnail w-thumbnail overflow-hidden">
         <a href="/{{$product->category->slug}}s/{{$product->slug}}">
-        <img class="h-full object-cover"
+        <img itemprop="image" class="h-full object-cover"
              src="@if(isset($product->image)){{asset('storage/'.$product->image)}}@else {{asset('/images/image-not-found.png')}}@endif"
              alt="{{$product->name}}">
         </a>
@@ -27,10 +27,10 @@
     @endif
     {{-- Brand name--}}
     @if($product->brand)
-        <a href="/marques/{{$product->brand->slug}}" class="duration-150 hover:underline text-sm">{{$product->brand->name}}</a>
+        <a itemprop="brand" href="/marques/{{$product->brand->slug}}" class="duration-150 hover:underline text-sm">{{$product->brand->name}}</a>
     @endif
     {{--Product name --}}
-    <h2 class="uppercase font-raleway-black tracking-wide line-clamp-1">
+    <h2 itemprop="name" class="uppercase font-raleway-black tracking-wide line-clamp-1">
         <a href="/{{$product->category->slug}}s/{{$product->slug}}">
             {{$product->name}}
         </a>

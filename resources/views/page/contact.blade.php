@@ -75,7 +75,7 @@
                         <x-form.error-message field="text"/>
                     </div>
                     {{--Bouton d'envoie--}}
-                    <x-form.button class="col-span-full">Ajouter</x-form.button>
+                    <x-form.button class="col-span-full">Envoyer</x-form.button>
 
                 </form>
             </div>
